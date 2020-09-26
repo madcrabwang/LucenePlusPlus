@@ -148,7 +148,7 @@ int32_t FieldsReader::size() {
 }
 
 void FieldsReader::seekIndex(int32_t docID) {
-    indexStream->seek(formatSize + (docID + docStoreOffset) * 8);
+    indexStream->seek(formatSize + (docID + docStoreOffset) * (int64_t)8);
 }
 
 bool FieldsReader::canReadRawDocs() {
